@@ -1,9 +1,17 @@
+#!/bin/bash -x
 cheak=$((RANDOM%3))
 
 workinghr=0
 wage=20
 salary=0
+total=0
 
+#for((i=0;i<=20;i++))
+day=1
+while [ $day -le 20 ]
+do
+
+cheak=$((RANDOM%3))
 case $cheak in
             1)
              echo "Fully Prasent"
@@ -22,5 +30,10 @@ case $cheak in
 
 esac
 salary=$((workinghr*wage))
-echo "Employees salary per day : $salary"
+total=$((total+salary))
+echo "Employees salary  : $salary"
+((day++))
+done
+
+echo "Employee Monthly salary :  $total"
 
