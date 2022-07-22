@@ -1,10 +1,16 @@
+#!/bin/bash -x
+heads=0
+tails=0
+function flip(){
 cheak=$((RANDOM%2))
- 
-case $cheak in 
-      1)
-      echo "Heads as winner"
-     ;;
-      2)
-      echo "Tails as winner"
-      ;;
-esac
+if [ $cheak -eq 1 ]
+then
+   echo "head"
+   heads=$(($heads+1))
+else
+    echo "tail"
+    tails=$(($tails+1))
+fi
+}
+flip
+
