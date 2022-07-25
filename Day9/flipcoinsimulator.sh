@@ -1,16 +1,29 @@
-#!/bin/bash -x
-heads=0
-tails=0
-function flip(){
+  
+#!/bin/bash  -x
+
+function coin(){
 cheak=$((RANDOM%2))
 if [ $cheak -eq 1 ]
 then
-   echo "head"
-   heads=$(($heads+1))
+    echo "Heads"
+     heads=$(($heads+1)) 
 else
-    echo "tail"
-    tails=$(($tails+1))
+    echo "tails"
+     tails=$(($tails+1))
 fi
 }
-flip
 
+for((i=1;i<=21;i++))
+do
+coin
+done
+
+if [ $heads -gt $tails ]
+then
+   
+   echo "Heads as winner:$heads"
+elif [ $tails -gt $heads ]
+then
+  
+   echo "Tails as winner:$tails"
+fi
