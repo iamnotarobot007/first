@@ -1,15 +1,14 @@
+  
 #!/bin/bash  -x
-heads=0
-tails=0
 
 function coin(){
 cheak=$((RANDOM%2))
 if [ $cheak -eq 1 ]
 then
-    echo "Heads as winner"
+    echo "Heads"
      heads=$(($heads+1)) 
 else
-    echo "tails as winner"
+    echo "tails"
      tails=$(($tails+1))
 fi
 }
